@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<link href="/css.css">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#B12A34">
+  <link real="shortcut icon" href="icon/icon-32.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Selecto</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="manifest" href="manifest.webmanifest">
+  <script src="app.js"></script>
+
+</head>
+
+<nav class="navbar navbar-expand-lg bg-success p-2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Conversor</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">INICIO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="hombre.html">HOMBRE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mujer.html">MUJER</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="prueba.html">No click</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<body>
+  <br>
+  <div class="card text-center">
+    <div class="card-header bg-success p-2">
+      ¿De que es la pagína?
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        Equivalencia tallas zapatos: Con el convertidor se puede calcular la talla alemana, británica, estadounidense,
+        brasileña, japonesa, coreana, australiana, Brannock, y las Mondopoint.
+
+        Aviso: ¡Cada marca diseña tallas un poco diferentes unas de otras! ¡Por eso es necesario que se pruebe distintas
+        tallas!
+      </p>
+      <a href="#" class="btn bg-success p-2">LISTO</a>
+    </div>
+
+  </div>
+  <br>
+
+
+  <div class="row">
+    <div class="card col-4">
+      <img src="img/img1.jpg" class="cat" alt="...">
+    </div>
+    <div class="card col-4">
+      <img src="img/img2.jpg" class="cat" alt="...">
+    </div>
+    <div class="card col-4">
+      <img src="img/img1.jpg" class="cat" alt="...">
+    </div>
+  </div>
+  <div>
+    <div class="row text-center">
+      <div class="col"><br><br>
+        <a id="instalar" class="btn btn-danger" href="#">instalacion</a>
+        <a id="instalarNotificaciones" class="btn btn-danger" href="#">Notificaciones</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.js"></script>
+  <script>
+    let eventoPrompt;
+    window.addEventListener('beforeinstallprompt', function(e){
+       e.preventDefault();
+       eventoPrompt= e;
+    });
+    
+
+    btnInstalar= document.getElementById("instalar");
+    btnInstalar.addEventListener('click', (e)=>{
+ 
+       
+       eventoPrompt.prompt();
+       eventoPrompt.userChoice.then((choiceResult)=>{
+          if(choiceResult.outcome==='accepted'){
+             console.log('El usuario instalo la app');
+          }else{
+             console.log('El usuario rechazo la instalacion');
+             btnInstalar.style.display= 'none';
+          }
+          eventoPrompt=null;
+       });
+    });
+     
+    
+ 
+    //----------------------Notificaciones----------------------------------
+    let botonNotificaciones = document.getElementById("instalarNotificaciones");
+    botonNotificaciones.addEventListener('click', function(e){
+       Notification.requestPermission().then(function(result){
+          if(result==='granted'){
+             botonNotificaciones.style.display='none';
+             randomNotifiacion();
+          }
+       });
+    });
+ 
+    function randomNotifiacion(){
+       let nTitle="Titulo Notificacion";
+       let nbody="Hola buen dia";
+       let nImage="./img/offline.png";
+       let options={
+          body:nbody,
+          icon:nImage
+       }
+       let notif= new Notification(nTitle,options);
+       setTimeout(randomNotifiacion,10000);
+    }
+  </script>
+
+
+</body>
+
+</html>

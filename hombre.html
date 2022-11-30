@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<link href="/css.css">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#B12A34">
+  <link real="shortcut icon" href="icon/icon-32.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Selecto</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="manifest" href="manifest.webmanifest">
+  <script src="app.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+</head>
+  <nav class="navbar navbar-expand-lg bg-success p-2">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Conversor</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">INICIO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hombre.html">HOMBRE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mujer.html">MUJER</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="prueba.html">No click</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<body>
+  
+  <br>
+  <div class="card">
+    <div class="card-body">
+      <div class="text-center">
+        Numero de tu pie: 1 <input type="range" id="cantidad" min="14" max="50" value="0" onchange="convertir()">
+        <span id="valor">0</span>
+      </div>
+      <br>
+      <div class="Card">
+        <div class="card-body">
+          <!--<select id="de" onchange="convertir()">
+            <option value="1">Paris (E.U)</option>
+            <option value="2">Inglesa (U.K.)</option>
+            <option value="3">Americana (U.S.)</option>
+            <option value="4">Numeracion metrica (CM)</option>
+          </select>-->
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">DE:</label>
+            <select class="form-select" id="de" onchange="convertir()">
+              <option value="1">Paris (E.U)</option>
+              <option value="2">Inglesa (U.K)</option>
+              <option value="3">Americana (U.S.)</option>
+              <option value="4">Numeracion metrica (CM)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+
+      <br>
+      <div class="Card">
+        <div class="card-body">
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">A:</label>
+            <select class="form-select" id="a" onchange="convertir()">
+              <option value="1">Paris (E.U)</option>
+              <option value="2">Inglesa (U.K)</option>
+              <option value="3">Americana (U.S.)</option>
+              <option value="4">Numeracion metrica (CM)</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <div class="Card text-center">
+        <h1 id="resultado">Resultado :</h1>
+      </div>
+      </div>
+      <br>
+
+
+
+
+
+</body>
+
+</html>
