@@ -6,13 +6,7 @@ workbox.precaching.precacheAndRoute([
   
     'hombre.html',
     'mujer.html',
-    'img',
-    //'app.js',
-    //'sw.js',
     'logica.js',
-    //'manifest.webmanifest',
-    'css/bootstrap.min.css',
-    'js/bootstrap.min.js',
     'offline.html'
 ])
 
@@ -40,13 +34,7 @@ workbox.routing.setCatchHandler(async context =>{
 });
 
 
-//self.addEventListener('install', (e)=>{
-    console.log("Instalado");
-    e.waitUntil(async()=>{
-      const cache = await caches.open(cacheName);
-      await cache.addAll(contenidoCache);
-    })
-//});
+
 
 
 
