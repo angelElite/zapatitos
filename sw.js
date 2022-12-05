@@ -7,7 +7,10 @@ workbox.precaching.precacheAndRoute([
     'hombre.html',
     'mujer.html',
     'logica.js',
-    'offline.html'
+    'offline.html',
+    'css',
+    'img',
+    'js'
 ])
 
 workbox.routing.registerRoute(
