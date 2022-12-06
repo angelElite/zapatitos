@@ -6,7 +6,6 @@ workbox.precaching.precacheAndRoute([
   
     'hombre.html',
     'mujer.html',
-    'logica.js',
     'offline.html',
     'css',
     'img',
